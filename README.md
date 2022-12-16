@@ -8,3 +8,5 @@ Get or have **Python 3+** installed, and run this script, preferably via command
 **You may also enjoy**:
 https://github.com/03b/GithubUsernameChecker
 https://github.com/03b/ReplitUsernameChecker
+https://github.com/03b/Solo.toUsernameChecker
+https://github.com/03b/RobloxUsernameChecker
