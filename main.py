@@ -1,12 +1,13 @@
 #  github.com/03B | made with hate
-#  12-15-22 // Please credit me if you use this in a program/product of yours, thanks
+#  12-15-22 / Please credit me if you use this in a program/product of yours, thanks
 import ssl, socket, threading
 
 THREAD_CAP = int(input("Max thread count:"))
 usernameFile = open("usernames.txt").read().splitlines()
 usernames = iter(usernameFile)
 
-def checkName(username):
+def checkName():
+    username = next(usernames)
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     ssl_sock = ssl.create_default_context().wrap_socket(s, server_hostname="github.com")
     ssl_sock.connect(("github.com", 443))
@@ -25,7 +26,5 @@ def checkName(username):
 
 
 while 1:
-    while threading.active_count() > THREAD_CAP:
-        pass
-    threading.Thread(target=checkName, args=(next(usernames), )).start()
+    threading.Thread(target=checkName).start()
 
